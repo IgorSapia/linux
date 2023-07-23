@@ -51,7 +51,44 @@ caso tenha criado o novo usuário e esquecido de setar tal durante a criação.
 este user poderá usar o sistema até o dia 26/07/2023.
 42 - [comando -> passwd nomeDoUser -e] expira a senha do nomeDoUser instantaneamente, fazendo com que no próximo login do user
 ele tenha de alterar sua senha
-
+43 - [comando -> usermod derik -c "Derik Danadinho"] alterando o -c do user derik para Derik Danadinho
+44 - [comando -> useradd duzao -m -c "Enduardo das Olivas" -s /bin/bash -p $(openssl passwd -crypt senha)] já cria o user da maneira certa, com a bash
+e com senha criptografada. Não deu certo no meu servidor. Precisei baixar o whois e dar o comando $(mkpasswd Senha123)
+45 - [comando -> ./nomeDoExec] executa o nomeDoExec.
+46 - [comando -> usermod -G adm,sudo endivaldo] Estou adicionando endivaldo aos grupos adm e sudo (o que permitirá endivaldo usar
+o sudo para funções de administrador do servidor)
+47 - [comando -> useradd duzao -m -c "Enduardo das Olivas" -s /bin/bash -p $(openssl passwd -crypt senha) -G grupo1,grupo2] Estou
+colocando o duzao em dois grupos que criei anteriormente com o comando groupadd. -G permite colocar mais de um grupo, o -g apenas
+um grupo por vez.
+48 - [comando -> gpasswd -d duzao grupo1] remove duzao apenas do grupo1
+49 - Cada arquivo possui drwxrwxrwx, o que se define em 4 grurpos - | --- | --- | --- |. O primeiro grupo representa o que tal
+arquivo é, sendo o d a representação de diretório. O segundo demonstra as permissões que o dono deste arquivo tem sobre ele.
+Caso apareça uma letra quer dizer que ele pode fazer o que a letra simboliza (R - Read, W - Write e X - Execute). O segundo grupo
+representa as permissões das pessoas que fazem parte do grupo habilitato ao arquivo e o terceiro a todos que não são o dono ou
+pertençam ao grupo do arquivo.
+50 - [comando -> chown derik:grupo1 /nomeDoDir] Alterei o dono do grupo nomeDoDir p/ o Derik e o grupo do nomeDoDir p/ grupo1
+51 - R tem o valor 4, gravação valor 2 e execução valor 1. Podemos somar isso p/ determinar a permissão que cada grupo vai ter,
+logo um arquivo 750 permite que o dono faça tudo, o grupo leia e execute e os outros nada façam.
+52 - [comando -> chmod 777 /rota] dando permissão máxima p/ todos (dono, grupo e outros)
+53 - No arquivo /etc/fstab escrever o comando  [/dev/nomeDoDisco /dirOndeSeráMontadoODisco ext4 defaults 0 0] o ext4 é o formato
+que o disco foi formatado. Isso serve para montar novos discos automaticamente na máquina. 
+54 - [comando -> cp /rota/nomeDoArquivo.txt /rota2/]Cópia de um arquivo individual de rota p/ rota2
+55 - Comando cp sobrepõe arquivos, caso o arquivo a ser copiado já exista na pasta onde está sendo copiado
+56 - [comando -> cp /rota/nomeDoArquivo.txt /rota2/ -i] Cópia de um arquivo individual de rota p/ rota2, caso haja na rota2 um
+arquivo chamado nomeDoArquivo.txt o linux perguntará se deve ou não sobrepor.
+57 - [comando -> cp /home/igor/* /rota2/ -r] Irá copiar tudo que está no diretório igor para a rota2, inclusive os diretórios
+de igor.
+58 - [comando -> cp /home/igor/arquivo.txt /rota2/ -v] Enquanto faz a cópia mostra o que está fazendo
+59 - mv é mesma coisa que o cp, contudo ele só move o arquivo e não copia.
+60 - [comando -> mv arquivo.txt arquivo1.txt] irá modificar o nome do arquivo para arquivo1
+61 - [comando -> ps aux] irá mostrar todos os processos de todos usuários (a), o nome dos usuários (u) e os processos executados
+fora do console (x)
+62 - [comando -> who -a] mostra os usuários logados ao servidor e o pin de cada um, o que posso usar para retirar a pessoa do
+servidor [comando -> kill 1000] (1000 representa o número do pin
+63 - Configurando o SAMBA: Criar uma pasta p/ onde os arquivos serão colocados. ir em /etc/samba/smb.conf e ao final do arquivo
+digitar [nomeDoCompartilhamento] path = /rotaDaPastaCriada writable = yes guest ok = yes guest only = yes
+64 - [comando -> systemctl restart smbd] para restartar o samba
+65 - [comando -> systemctl enable smbd] para que o samba permaneça ativo toda vez que o servidor for desligado e ligado.
 
 
          

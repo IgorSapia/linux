@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "Criando usuários do sistema... "
+
+useradd user1 -m -c "Usuário do Shell Script" -s /bin/bash -p $(openssl passwd -crypt senha)
+passwd user1 -e
+
+useradd user2 -m -c "Usuário do Shell Script" -s /bin/bash -p $(openssl passwd -crypt senha)
+passwd user2 -e
+
+useradd user3 -m -c "Usuário do Shell Script" -s /bin/bash -p $(openssl passwd -crypt senha)
+passwd user3 -e
+
+useradd user4 -m -c "Usuário do Shell Script" -s /bin/bash -p $(openssl passwd -crypt senha)
+passwd user4 -e
+
+echo "Users criados!"

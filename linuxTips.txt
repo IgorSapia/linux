@@ -1,0 +1,57 @@
+Linux TIPS
+1  - Putty.exe serve para acessar a VM (Verificar o ip [comando -> ip a] da VM)
+2  - ~ representa estar na pasta do user logado
+3  - $ representa que usuário não tem total de permissões
+4  - # representa que o o usuário é o master
+5  - pwd mostra onde estou
+6  - cd /rota leva até a rota, enquanto cd algo procura se algo existe naquele diretório
+7  - TAB ajuda muito (autocomplete, dicas de diretórios e um tipo de ls tb)
+8  - [comando -> ls | more] permite rolagem de muitos arquivos
+9  - [comando -> ls p*] buscará tudo que tiver naquele diretório que comece com P
+10 - [comando -> ls p?a] buscará tudo que tiver naquele diretório que comece com P, o segundo char pode ser qualquer coisa e o
+terceiro char será o A.
+11 - Podemos misturar o * e o ? como filtro das buscas [comando -> ls p?a*]
+12 - No caso de arquivos sequenciais é possivel fazer a busca de parte deles [comando -> ls arquivo[1-3].*]
+neste caso caso tenhamos arquivo1.txt até o arquivo10.txt seria mostrado na tela apenas o arquivo1, 2 e 3.
+13 - [comando -> ls /rota] vai mostrar tudo que está na rota
+14 - [comando -> find -name arq*] vai buscar a partir de onde estou (PWD) todos arquivos que tiverem o nome começando por arq
+15 - [comando -> mkdir nomeDoDiretorio] vai criar o diretório onde estou 
+16 - [comando -> touch nomeDoArquivo.doc] vai criar o arquivo onde estou
+17 - [comando -> mkdir Super Diretorio] vai criar o diretório Super e o Diretorio onde estou (2 diretórios serão criados)
+18 - [comando -> mkdir 'Super Diretorio'] vai criar o diretório Super Diretorio onde estou (aspas simples indica que é 1 apenas)
+19 - Todo comando ligado a diretórios com espaço no meio terão de usar a aspas simples ('Super Diretorio')
+20 - [comando -> rmdir nomeDoDiretorio] vai remover o diretório nomeDoDiretorio, apenas se este estiver vazio
+21 - [comando -> rm nomeDoArquivo] vai remover o arquivo nomeDoArquivo
+22 - [comando -> rm nome*] vai remover todos os arquivos que iniciarem por nome, daquela pasta
+23 - [comando -> rm *.txt] vai remover todos os arquivos com o fim .txt, daquela pasta       
+23 - [comando -> rm -rf nomeDoDir/ ] vai remover todos os arquivos de dentro de nomeDoDir (diretórios e arquivos), além do
+diretório nomeDoDir.
+24 - [comando -> ls -l] vai mostrar tudo que está no diretório que estou em formato de lista longa
+25 - Primeira letra da lista longa representa o que o arquivo é: l = link, d = diretório e - = arquivo
+26 - Numero após as letras demonstra quantos objetos tem.
+27 - [comando -> ls -a] lista todos os arquivos, até mesmo os ocultos.
+28 - [comando -> ls -lh] vai mostrar tudo que está no diretório que estou em formato de lista longa, além de facilitar o tamanho
+dos arquivos, o h representa o formato humano.
+29 - [comando -> cat /rota] possibilita que se leia arquivos de texto.
+30 - [comando -> su] possibilita que se entre no super admin (root)
+31 - [comando -> su nomeDoUser] possibilita que se entre no nomeDoUser
+32 - [comando -> nano nomeDoArquivo.txt] possibilita que se entre no nomeDoArquivo.txt p/ realizar alterações
+33 - [comando -> history] mostra os comandos dados pelo usuário logado (root pode entra nos usuários e dar o cmd p/ ver o que o
+usuário fez)
+34 - [comando -> export HISTTIMEFORMAT="%c"] possibilita novas informações no history
+35 - [comando -> set +o history] não grava mais no history os comandos dados pelo usuário
+36 - [comando -> set -o history] volta a gravar no history os comandos dados pelo usuário
+37 - [comando -> useradd derik -m -c "Derik Dandinho"] user derik criado, com pasta home própria e comentário salvando o nome
+completo do user.
+38 - [comando -> passwd nomeDoUser] permite colocar senha p/ o nomeDoUser
+39 - [comando -> chsh -s /bin/bash nomeDoUser] direciona um shell (cores, nome dele na linha de execução) p/ nomeDoUser, útil
+caso tenha criado o novo usuário e esquecido de setar tal durante a criação.
+40 - [comando -> useradd duzao -m -c "Enduardo das Olivas" -s /bin/bash] já cria o user da maneira certa, com a bash
+41 - [comando -> useradd guest-m -c "Convidado" -e 26/07/2023 -s /bin/bash] já cria o user da maneira certa, com a bash, porem
+este user poderá usar o sistema até o dia 26/07/2023.
+42 - [comando -> passwd nomeDoUser -e] expira a senha do nomeDoUser instantaneamente, fazendo com que no próximo login do user
+ele tenha de alterar sua senha
+
+
+
+         
